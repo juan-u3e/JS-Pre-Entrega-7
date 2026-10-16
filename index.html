@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +8,71 @@
     <link rel="stylesheet" href="./css/styles.css">
     <title>Pre Entrega 7</title>
 </head>
+
 <body>
     <header id="header">
-
+        <h1>BoxGym</h1>
+        <h2>Panel de Administracion</h2>
     </header>
     <main>
-    <div id="formulario">
-        <span id="spanFormu">
-        </span>
+        <div id="formulario">
+            <h3>Formulario de Nuevos Miembros</h3>
+            <p>LLene los datos del nuevo miembro para agregarlo a la lista</p>
             <form id="form">
-            <ul class="formularioM">
-            <li><h4>Nombre</h4><input id="Nombre" type="text"></li>
-            <li><h4>Edad</h4><input id="edad" type="number"></li>
-            <li><h4>Disciplina</h4><input id="disciplina" type="text"></li>
-            <li><h4>Dias de entrenamiento por semana</h4><input id="entrenamiento" type="text"></li>
-            <input type="submit" class="boton" value="Enviar">
-            </ul>
-        </form>
-    </div>
-    <div id="formfiltracion">
-                <form>
-            <ul class="formularioF" >
-                <h4>Filtrar miembros por disciplina</h4>
-                <li><input id="filtrar" name="filtrar" type="text">
-                <input type="submit" class="boton"></li>
-            </ul>
-        </form>
+                <ul class="formularioM">
+                    <li>
+                        <h4>Nombre</h4><input type="text"  name="nombre" placeholder="Ej: Juan Pérez" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$" title="Solo se permiten letras y espacios, sin números ni símbolos" required>
+                    </li>
+                    <li>
+                        <h4>Edad</h4><input name="edad" type="number">
+                    </li>
+                    <li>
+                        <h4>Disciplina</h4>                    
+                            <select name="disciplinas">
+                            <option>Selecciona una opción</option>
+                            <option value="Musculacion">Musculación</option>
+                            <option value="Crossfit">Crossfit</option>
+                            <option value="Boxeo">Boxeo</option>
+                        </select>
+                    </li>
+                    <li>
+                        <h4>Dias de entrenamiento por semana</h4>                       
+                            <select name="dias">
+                            <option>Selecciona una opción</option>
+                            <option>Dos dias a la semana</option>
+                            <option>Tres dias a la semana</option>
+                            <option>Cinco dias a la semana</option>
+                        </select>
+                    </li>
+                    <input type="submit" class="boton" value="Enviar">
+                </ul>
+            </form>
+        </div>
+        <div id="formfiltracion">
+            <form>
+                <ul class="formularioF">
+                    <h4>Filtrar miembros por disciplina</h4>
+                    <li><label>Disciplina:</label>
+                        <select id="disciplina" name="disciplina" required>
+                            <option>Selecciona una opción</option>
+                            <option>Musculacion</option>
+                            <option>Crossfit</option>
+                            <option>Boxeo</option>
+                        </select>
+                        <input type="submit" class="boton">
+                    </li>
+                </ul>
+            </form>
 
-    </div>
-    <span id="spanContainer"></span>
-    <div id="container">
-        
+        </div>
+        <h3>Tarjeta de miembros</h3>
+        <div id="container">
 
-    </div>
+
+        </div>
     </main>
 
-    
+
 </body>
+
 </html>
