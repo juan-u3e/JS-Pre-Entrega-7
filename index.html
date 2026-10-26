@@ -24,15 +24,15 @@
                         <h4>Nombre</h4><input type="text"  name="nombre" placeholder="Ej: Juan Pérez" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$" title="Solo se permiten letras y espacios, sin números ni símbolos" required>
                     </li>
                     <li>
-                        <h4>Edad</h4><input name="edad" type="number">
+                        <h4>Edad</h4><input name="edad" type="number" required>
                     </li>
                     <li>
-                        <h4>Dni</h4><input name="dni" type="number">
+                        <h4>Dni</h4><input name="dni" type="number" required>
                     </li>
                     <li>
                         <h4>Disciplina</h4>                    
-                            <select name="disciplinas">
-                            <option>Selecciona una opción</option>
+                            <select name="disciplinas" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
                             <option value="Musculacion">Musculación</option>
                             <option value="Crossfit">Crossfit</option>
                             <option value="Boxeo">Boxeo</option>
@@ -40,8 +40,8 @@
                     </li>
                     <li>
                         <h4>Dias de entrenamiento por semana</h4>                       
-                            <select name="dias">
-                            <option>Selecciona una opción</option>
+                            <select name="dias" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
                             <option>Dos dias a la semana</option>
                             <option>Tres dias a la semana</option>
                             <option>Cinco dias a la semana</option>
@@ -51,6 +51,7 @@
                 </ul>
             </form>
         </div>
+        <p id="mensaje-feedback"></p>
         <div id="formfiltracion">
             <form>
                 <ul class="formularioF">
@@ -69,10 +70,7 @@
 
         </div>
         <h3>Tarjeta de miembros</h3>
-        <div id="container">
-
-
-        </div>
+        <div id="container"></div>
     </main>
 
 

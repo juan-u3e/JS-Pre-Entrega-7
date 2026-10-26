@@ -14,15 +14,16 @@ if (!miembrosGuardados) {
   localStorage.setItem("miembros", JSON.stringify(miembros));
 }
 
-setInterval(() => {
-    alert("Cargue los datos del formulario para agregar un nuevo miembro")
-}, 20000)
-
 const container = document.getElementById("container");
 const formulario = document.getElementById("form");
+const mensajeFeedback = document.getElementById("mensaje-feedback");
+
+function mostrarMensaje(texto) {
+  mensajeFeedback.textContent = texto;
+}
 
 function renderizarTarjetas(lista) {
-  container.innerHTML = ""; // Limpia las tarjetas actuales para evitar duplicados
+  container.innerHTML = ""; 
   lista.forEach((miembro) => crearCard(miembro));
 }
 
@@ -59,7 +60,6 @@ function crearCard(miembro) {
       miembroAEditar.disciplina = nuevaDisciplina;
       localStorage.setItem("miembros", JSON.stringify(miembros));
       renderizarTarjetas(miembros);
-      alert(`Disciplina de ${nombre} cambiada a ${nuevaDisciplina}`);
     }
   });
 
@@ -68,9 +68,9 @@ function crearCard(miembro) {
   boton.innerText = `Eliminar`;
   boton.addEventListener("click", () => {
     card.remove()
-    miembros = miembros.filter((m) => m.nombre !== miembro.nombre);
+    miembros = miembros.filter((m) => m.dni !== miembro.dni);
     localStorage.setItem("miembros", JSON.stringify(miembros));
-    alert("Eliminaste un miembro")
+    mostrarMensaje(`Se eliminó a ${nombre} del listado.`);
   })
   card.appendChild(boton)
   container.appendChild(card);
@@ -105,8 +105,8 @@ formulario.addEventListener("submit", (e) => {
   e.preventDefault();
   const nombre = e.target.nombre.value;
   const edad = e.target.edad.value;
-  if (isNaN(edad) || edad <= 0) {
-    alert("Por favor, ingresá una edad válida (número positivo).");
+  if (isNaN(edad) || edad <= 0 || edad>100) {
+    mostrarMensaje("Por favor, ingresá una edad válida, hasta 99 (número positivo).");
     return;
   }
 
@@ -118,7 +118,7 @@ formulario.addEventListener("submit", (e) => {
   miembros = [...miembros, miembroNuevo];
   localStorage.setItem("miembros", JSON.stringify(miembros));
   crearCard(miembroNuevo);
-  alert("Creaste un nuevo miembro")
+   mostrarMensaje(`Se registró a ${nombre} correctamente.`)
 });
 
 formfiltracion.addEventListener("submit", (e) => {
