@@ -1,0 +1,8 @@
+[
+  { "nombre": "Carlos", "edad": 34, "dni": 38134567, "disciplina": "Musculacion", "entrenamiento": "Dos dias a la semana", "precio": "$35000", "categoria": "Mayor de edad" },
+  { "nombre": "Jorge", "edad": 28, "dni": 40454890, "disciplina": "Crossfit", "entrenamiento": "Tres dias a la semana", "precio": "$40000", "categoria": "Mayor de edad" },
+  { "nombre": "Jimena", "edad": 31, "dni": 39555123, "disciplina": "Crossfit","entrenamiento": "Cinco dias a la semana", "precio": "$50000", "categoria": "Mayor de edad" },
+  { "nombre": "Yamila", "edad": 25, "dni": 43121343, "disciplina": "Boxeo", "entrenamiento": "Tres dias a la semana", "precio": "$40000", "categoria": "Mayor de edad" },
+  { "nombre": "Roman", "edad": 21, "dni": 46880900, "disciplina": "Musculacion", "entrenamiento": "Cinco dias a la semana", "precio": "$50000", "categoria": "Mayor de edad" },
+  { "nombre": "Mateo", "edad": 45, "dni": 28631232, "disciplina": "Boxeo", "entrenamiento": "Dos dias a la semana", "precio": "$35000", "categoria": "Mayor de edad" }
+]
