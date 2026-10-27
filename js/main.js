@@ -20,6 +20,9 @@ const mensajeFeedback = document.getElementById("mensaje-feedback");
 
 function mostrarMensaje(texto) {
   mensajeFeedback.textContent = texto;
+   setTimeout(() => {
+    mensajeFeedback.textContent = "";
+  }, 3000);
 }
 
 function renderizarTarjetas(lista) {
